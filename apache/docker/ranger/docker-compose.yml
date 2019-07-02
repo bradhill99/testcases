@@ -2,10 +2,12 @@ version: "2"
 services:
   postgres-server:
     image: coheigea/ranger-postgres
+    environment:
+      - POSTGRES_PASSWORD=security
     ports:
       - "5432:5432"
   ranger-admin:
-    image: coheigea/ranger-admin
+    image: coheigea/ranger-admin:20190702001
     stdin_open: true
     tty: true
     depends_on:
